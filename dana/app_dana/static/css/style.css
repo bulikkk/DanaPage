@@ -1,0 +1,59 @@
+body {
+  width: 100%;
+}
+
+.main-header {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-logo {
+  width: 100%;
+  height: auto;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.logo {
+  height: 120px;
+  width: 120px;
+}
+
+.logo-name {
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 40px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  margin-bottom: 2px;
+  margin-top: 25px;
+}
+
+.logo-name-title {
+  font-family: 'Comfortaa', sans-serif;
+  letter-spacing: 4.4px;
+  opacity: 0.3;
+  margin-top: 4px;
+}
+
+.nav-menu {
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 20px;
+  font-weight: 100;
+  text-align: center;
+  margin-top: 100px;
+  width: 100%;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+
+.nav-menu>ul {
+  padding: 0px;
+}
+
+.nav-menu>ul>li {
+  display: inline-block;
+  padding: 0 50px 5px 50px;
+  margin: 0px;
+  list-style-type: none;
+
+}
