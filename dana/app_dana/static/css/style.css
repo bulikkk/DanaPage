@@ -78,9 +78,25 @@ body {
   height: 500px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 50px;
+  margin-top: 30px;
   margin-bottom: 50px;
   background-color: rgba(0,0,0,0.5);
+}
+
+.next-prev {
+  position: absolute;
+  width: 100%;
+  top: 228px;
+}
+
+.prev {
+  position: absolute;
+  left: 10px;
+}
+
+.next {
+  position: absolute;
+  right: 10px;
 }
 
 
