@@ -3,6 +3,8 @@ body {
   margin: 0;
 }
 
+/* CSS to all menu/navbar */
+
 .main-header {
   max-width: 1170px;
   margin-left: auto;
@@ -68,14 +70,28 @@ body {
   color: rgba(0,0,0,0.3);
 }
 
+/* CSS to slide container*/
+
+.slide-container {
+  position: relative;
+  width: 1170px;
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: rgba(0,0,0,0.5);
+}
+
 
 
 
 
 .main-footer {
   width: 100%;
-  position: absolute;
+  position: relative;
   bottom: 0;
+  margin-top: 10px;
 }
 
 .footer-menu {
