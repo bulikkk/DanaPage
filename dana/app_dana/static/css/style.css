@@ -118,9 +118,13 @@ body {
   font-weight: 100;
 }
 
+.projects-container-projects {
+  margin-top: 30px;
+}
+
 #c1, #c2, #c3 {
-  width: calc((100% - 66px) / 3);
-  height: 500px;
+  width: calc((100% - 74px) / 3);
+  height: auto;
   border: 1px solid black;
   margin-bottom: 30px;
   display: inline-block;
