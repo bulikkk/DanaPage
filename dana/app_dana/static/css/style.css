@@ -137,7 +137,7 @@ body {
 .project {
   position: relative;
   max-width: 100%;
-  height: 430px;
+  height: 420px;
   border: 1px solid black;
   margin-bottom: 30px;
   padding: 50px;
@@ -146,7 +146,7 @@ body {
 
 .project>img {
   max-width: 100%;
-  height: 50%;
+  height: 48%;
   object-fit: cover;
 }
 
@@ -156,7 +156,13 @@ body {
   font-size: 23px;
   letter-spacing: 5.5px;
   text-transform: uppercase;
+}
 
+.project-project-desc {
+  margin-top: 40px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13.4px;
+  color: rgba(0,0,0,0.5);
 }
 
 
