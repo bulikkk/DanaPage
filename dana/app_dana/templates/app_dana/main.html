@@ -18,7 +18,7 @@
       </div>
       <div class="nav-menu">
         <ul>
-          <li><a href="#">graphic design</a></li>
+          <li><a href="#">graphic designs</a></li>
           <li><a href="#">illustrations</a></li>
           <li><a href="#">about</a></li>
           <li><a href="#">contact</a></li>
@@ -41,25 +41,10 @@
       </div>
       <div class="projects-container-projects">
         <div id="c1">
-
-          <div class="project">
-            <img class="project-image" src="{% static '/project.jpg' %}" alt="Project image"/>
-            <p class="project-project-title">Project title</p>
-            <p class="project-project-desc">
-               Lorem ipsum dolor sit amet, consectetuer
-               adipiscing elit, sed diam nonummy nibh
-               euismod tincidunt ut laoreet dolore
-               magna aliquam erat volut
-            </p>
-            <img class="project-plus" src="{% static '/plus.png' %}" alt="Plus">
-          </div>
-
         </div>
         <div id="c2">
-
         </div>
         <div id="c3">
-
         </div>
       </div>
     </div>
@@ -90,27 +75,44 @@
 
             var obj = JSON.parse(projects);
 
+            console.log(obj);
+
             for (var i = 1; i <= obj.length; i++) {
                 if (i % 3 === 1) {
                     var col = document.getElementById("c1");
-                    var element = document.createElement("div");
-                    element.appendChild(document.createTextNode('The man who mistook his wife for a hat'));
-                    col.appendChild(element);
-
 
                 }
                 else if (i % 3 === 2) {
                     var col = document.getElementById("c2");
-
                 }
                 else {
                     var col = document.getElementById("c3");
-
                 }
+                var project = document.createElement("div");
+                project.classList.add("project");
+                var img = document.createElement("img");
+                img.classList.add("project-image");
+                img.setAttribute("src", "/static/" + obj[i-1].fields.image);
+                img.setAttribute("alt", "Project image");
+                project.appendChild(img);
+                var title = document.createElement("p");
+                title.classList.add("project-project-title");
+                title.innerHTML = obj[i-1].fields.title;
+                project.appendChild(title);
+                var desc = document.createElement("p");
+                desc.classList.add("project-project-desc");
+                desc.innerHTML = obj[i-1].fields.description;
+                project.appendChild(desc);
+                var plus = document.createElement("img");
+                plus.classList.add("project-plus");
+                plus.setAttribute("src", "/static/plus.png");
+                plus.setAttribute("alt", "Plus");
+                project.appendChild(plus);
+                col.appendChild(project);
             }
         }
 
-
+        initProjects();
     </script>
 </body>
 </html>

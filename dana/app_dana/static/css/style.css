@@ -168,10 +168,11 @@ body {
 }
 
 .project-plus {
-  position: static;
+  position: absolute;
   height: 40px;
   width: 40px;
-  margin-bottom: -73px;
+  bottom: -20px;
+  left: 162.672px;
 }
 
 /* CSS to footer */
