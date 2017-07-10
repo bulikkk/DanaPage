@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta name="mobile-web-app-capable" content="yes">
     <title>Dana Maczyńska</title>
-    <!-- <link rel="stylesheet" type="text/css" href="/css/style.css"> -->
     <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Poppins|Comfortaa|Open+Sans" rel="stylesheet">
 </head>
 <body>
-  <!-- header with logo, name and navbar -->
+<!-- header with logo, name and navbar -->
     <div class="main-header">
       <div class="header-logo">
         <a href="{% url 'main' %}"><img class="logo" src="{% static '/Dana logo.png' %}" alt="Dana Maczyńska Logo"/></a>
@@ -27,6 +26,7 @@
       </div>
     </div>
 
+<!-- container with sliding banners -->
     <div class="slide-container">
       <div class="next-prev">
         <a class="prev" href="#"><img src="{% static '/prev.png' %}" alt="Previouse slide"></a>
@@ -34,6 +34,7 @@
       </div>
     </div>
 
+<!-- container with projects on the main page -->
     <div class="projects-container">
       <div class="projects-container-header">
         <p>Projects</p>
@@ -53,53 +54,17 @@
             <img class="project-plus" src="{% static '/plus.png' %}" alt="Plus">
           </div>
 
-          <div class="project">
-            <img class="project-image" src="{% static '/project.jpg' %}" alt="Project image"/>
-            <p class="project-project-title">Project title</p>
-            <p class="project-project-desc">
-               Lorem ipsum dolor sit amet, consectetuer
-               adipiscing elit, sed diam nonummy nibh
-               euismod tincidunt ut laoreet dolore
-               magna aliquam erat volut
-            </p>
-            <img class="project-plus" src="{% static '/plus.png' %}" alt="Plus">
-          </div>
-
         </div>
         <div id="c2">
 
-          <div class="project">
-            <img class="project-image" src="{% static '/project.jpg' %}" alt="Project image"/>
-            <p class="project-project-title">Project title</p>
-            <p class="project-project-desc">
-               Lorem ipsum dolor sit amet, consectetuer
-               adipiscing elit, sed diam nonummy nibh
-               euismod tincidunt ut laoreet dolore
-               magna aliquam erat volut
-            </p>
-            <img class="project-plus" src="{% static '/plus.png' %}" alt="Plus">
-          </div>
-
         </div>
         <div id="c3">
-
-          <div class="project">
-            <img class="project-image" src="{% static '/project.jpg' %}" alt="Project image"/>
-            <p class="project-project-title">Project title</p>
-            <p class="project-project-desc">
-               Lorem ipsum dolor sit amet, consectetuer
-               adipiscing elit, sed diam nonummy nibh
-               euismod tincidunt ut laoreet dolore
-               magna aliquam erat volut
-            </p>
-            <img class="project-plus" src="{% static '/plus.png' %}" alt="Plus">
-          </div>
 
         </div>
       </div>
     </div>
 
-
+<!-- footer -->
     <div class="main-footer">
       <div class="footer-menu">
         <ul>
@@ -108,5 +73,10 @@
         </ul>
       </div>
     </div>
+
+    <script>
+
+
+    </script>
 </body>
 </html>
