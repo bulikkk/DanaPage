@@ -175,6 +175,20 @@ body {
   left: 162.672px;
 }
 
+.project-new {
+  height: 35px;
+  width: 100px;
+  margin: 0;
+  padding-top: 5px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  color: white;
+  background-color: black;
+}
+
 /* CSS to footer */
 
 .main-footer {

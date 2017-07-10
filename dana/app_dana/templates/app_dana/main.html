@@ -75,6 +75,8 @@
 
             var obj = JSON.parse(projects);
 
+            var today = new Date().getTime();
+
             console.log(obj);
 
             for (var i = 1; i <= obj.length; i++) {
@@ -90,6 +92,17 @@
                 }
                 var project = document.createElement("div");
                 project.classList.add("project");
+
+                var f = obj[i-1].fields.add_date.split("-");
+                var date = new Date(f[0], f[1] - 1, f[2]).getTime();
+
+                if (((today / 1000) - (date / 1000)) < 2629743) {
+                    var n = document.createElement("p");
+                    n.classList.add("project-new")
+                    n.innerHTML = "new";
+                    project.appendChild(n);
+                }
+
                 var img = document.createElement("img");
                 img.classList.add("project-image");
                 img.setAttribute("src", "/static/" + obj[i-1].fields.image);
