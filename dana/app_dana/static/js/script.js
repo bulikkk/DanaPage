@@ -1,6 +1,6 @@
-function initProjects() {
+function initProjects(pro) {
 
-    var projects = (("{{ projects }}").replace(/&(l|g|quo)t;/g, function (a, b) {
+    var projects = ((pro).replace(/&(l|g|quo)t;/g, function (a, b) {
         return {
             l: '<',
             g: '>',
@@ -14,8 +14,6 @@ function initProjects() {
     var obj = JSON.parse(projects);
 
     var today = new Date().getTime();
-
-    console.log(obj);
 
     for (var i = 1; i <= obj.length; i++) {
         if (i % 3 === 1) {
@@ -34,7 +32,7 @@ function initProjects() {
         var f = obj[i-1].fields.add_date.split("-");
         var date = new Date(f[0], f[1] - 1, f[2]).getTime();
 
-        if (((today / 1000) - (date / 1000)) < 2629743) {
+        if ((((today / 1000) - (date / 1000)) < 2629743) && (obj[i-1].fields.new === true)) {
             var n = document.createElement("p");
             n.classList.add("project-new")
             n.innerHTML = "new";
