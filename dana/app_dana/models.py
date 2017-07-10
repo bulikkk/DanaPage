@@ -16,7 +16,7 @@ class Project(models.Model):
     type = models.IntegerField(choices=TYPE_CHOICES.items())
     image = models.ImageField(upload_to="images")
     add_date = models.DateField(default=date.today)
-    new = models.BooleanField(default=False)
+    new = models.BooleanField(default=True)
 
     def __str__(self):
         return '{}, {}'.format(self.title, self.description)
