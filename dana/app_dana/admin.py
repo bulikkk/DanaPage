@@ -6,4 +6,4 @@ from .models import Project
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
-    fields = ('title', 'description', 'type', 'image')
+    fields = ('title', 'description', 'type', 'image', 'new')
