@@ -75,6 +75,40 @@
     </div>
 
     <script>
+        function initProjects() {
+
+            var projects = (("{{ projects }}").replace(/&(l|g|quo)t;/g, function (a, b) {
+                return {
+                    l: '<',
+                    g: '>',
+                    quo: '"'
+                }[b];
+            }));
+
+            projects = projects.replace(/u'/g, '\'')
+            projects = projects.replace(/'/g, '\"')
+
+            var obj = JSON.parse(projects);
+
+            for (var i = 1; i <= obj.length; i++) {
+                if (i % 3 === 1) {
+                    var col = document.getElementById("c1");
+                    var element = document.createElement("div");
+                    element.appendChild(document.createTextNode('The man who mistook his wife for a hat'));
+                    col.appendChild(element);
+
+
+                }
+                else if (i % 3 === 2) {
+                    var col = document.getElementById("c2");
+
+                }
+                else {
+                    var col = document.getElementById("c3");
+
+                }
+            }
+        }
 
 
     </script>
