@@ -34,7 +34,7 @@ function initProjects(pro) {
 
         if ((((today / 1000) - (date / 1000)) < 2629743) && (obj[i-1].fields.new === true)) {
             var n = document.createElement("p");
-            n.classList.add("project-new")
+            n.classList.add("project-new");
             n.innerHTML = "new";
             project.appendChild(n);
         }
