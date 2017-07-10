@@ -124,7 +124,8 @@ body {
 
 #c1, #c2, #c3 {
   position: relative;
-  width: calc((100% - 74px) / 3);
+  top: 0;
+  width: calc((100% - 68px) / 3);
   height: auto;
   margin-bottom: 30px;
   display: inline-block;
@@ -179,7 +180,7 @@ body {
 
 
 
-
+/* CSS to footer */
 
 .main-footer {
   width: 100%;
