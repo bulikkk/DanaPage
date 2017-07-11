@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Project
+from .models import Banner, Project
 
 # Register your models here.
 
@@ -7,3 +7,8 @@ from .models import Project
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
     fields = ('title', 'description', 'type', 'image', 'new')
+
+
+@admin.register(Banner)
+class BannerAdmin(admin.ModelAdmin):
+    fields = ('title', 'time', 'no', 'image', 'active')

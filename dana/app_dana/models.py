@@ -20,3 +20,16 @@ class Project(models.Model):
 
     def __str__(self):
         return '{}, {}'.format(self.title, self.description)
+
+
+class Banner(models.Model):
+    title = models.CharField(max_length=128)
+    image = models.ImageField(upload_to="images")
+    add_date = models.DateField(default=date.today)
+    time = models.IntegerField()
+    no = models.IntegerField()
+    active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return '{}, No: {}, Time: {}, Active: {}'.format(self.title, self.no, self.time, self.active)
+
