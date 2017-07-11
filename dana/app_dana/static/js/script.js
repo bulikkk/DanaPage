@@ -1,4 +1,4 @@
-function initProjects(pro) {
+function initProjects(pro, ban) {
 
     var projects = ((pro).replace(/&(l|g|quo)t;/g, function (a, b) {
         return {
@@ -26,6 +26,7 @@ function initProjects(pro) {
         else {
             var col = document.getElementById("c3");
         }
+
         var project = document.createElement("div");
         project.classList.add("project");
 
@@ -58,5 +59,35 @@ function initProjects(pro) {
         plus.setAttribute("alt", "Plus");
         project.appendChild(plus);
         col.appendChild(project);
+    }
+
+    var banners = ((ban).replace(/&(l|g|quo)t;/g, function (a, b) {
+        return {
+            l: '<',
+            g: '>',
+            quo: '"'
+        }[b];
+    }));
+
+    banners = banners.replace(/u'/g, '\'')
+    banners = banners.replace(/'/g, '\"')
+
+    var banner = JSON.parse(banners);
+
+    for (var i = 1; i <= banner.length; i++) {
+      var dots = document.querySelector(".dot-container");
+      var dot = document.createElement("span");
+      dot.classList.add("dot");
+      dot.setAttribute("onclick", "currentSlide(" + i + ")");
+      dots.appendChild(dot);
+
+      var slides = document.querySelector(".slide-container");
+      
+
+
+
+
+
+
     }
 }
