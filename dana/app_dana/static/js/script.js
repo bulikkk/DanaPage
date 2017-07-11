@@ -103,6 +103,7 @@ function showSlides(n) {
     for (i = 0; i < slides.length; i++) {
        slides[i].style.display = "none";
     }
+    if (slideIndex<0) {slideIndex=slides.length-1}
     slideIndex++;
     if (slideIndex> slides.length) {slideIndex = 1}
     for (i = 0; i < dots.length; i++) {
