@@ -81,13 +81,31 @@ function initProjects(pro, ban) {
       dot.setAttribute("onclick", "currentSlide(" + i + ")");
       dots.appendChild(dot);
 
+      var prev = document.querySelector(".prev");
+
       var slides = document.querySelector(".slide-container");
-      
-
-
-
-
-
-
+      var slide = document.createElement("div");
+      slide.classList.add("mySlides");
+      slide.classList.add("fade");
+      var image = document.createElement("img");
+      image.setAttribute("src", "/static/" + banner[i-1].fields.image);
+      slide.appendChild(image);
+      slides.insertBefore(slide, prev);
     }
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
 }
