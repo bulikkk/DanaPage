@@ -63,15 +63,17 @@
 initProjects("{{ projects }}", "{{ banners }}");
 
 var slideIndex = 0;
+var myVar;
+
 showSlides(slideIndex);
 
 function plusSlides(n) {
-  slideIndex += n;
+  slideIndex += n-1;
   showSlides(slideIndex);
 }
 
 function currentSlide(n) {
-  slideIndex = n;
+  slideIndex = n-1;
   showSlides(slideIndex);
 }
 
