@@ -87,6 +87,7 @@ function initProjects(pro, ban) {
       var slide = document.createElement("div");
       slide.classList.add("mySlides");
       slide.classList.add("fade");
+      slide.setAttribute("data-time", String(banner[i-1].fields.time))
       var image = document.createElement("img");
       image.setAttribute("src", "/static/" + banner[i-1].fields.image);
       slide.appendChild(image);
@@ -114,7 +115,7 @@ function showSlides(n) {
 
     clearTimeout(myVar);
 
-    myVar = setTimeout(showSlides, 4000);
+    myVar = setTimeout(showSlides, parseInt(slides[slideIndex-1].getAttribute("data-time"))*1000);
 
 }
 

@@ -178,13 +178,17 @@ body {
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .1}
-  to {opacity: 1}
+  0% {opacity: 0}
+  10% {opacity: 1}
+  90% {opacity: 1}
+  100% {opacity: 0}
 }
 
 @keyframes fade {
-  from {opacity: .1}
-  to {opacity: 1}
+  0% {opacity: 0}
+  10% {opacity: 1}
+  90% {opacity: 1}
+  100% {opacity: 0}
 }
 
 /* CSS to projects container */
