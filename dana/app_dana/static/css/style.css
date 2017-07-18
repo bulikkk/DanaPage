@@ -83,26 +83,10 @@ body {
   background-color: white;
 }
 
-.next-prev {
-  position: absolute;
-  width: 100%;
-  top: 228px;
-}
-
-.prev {
-  position: absolute;
-  left: 10px;
-}
-
-.next {
-  position: absolute;
-  right: 10px;
-}
-
 /* css to slideshow */
 
 .mySlides {
-  display: inherit;
+  display: inline;
   position: absolute;
   max-width: 100%;
   height: 100%;
@@ -117,6 +101,7 @@ body {
 
 /* Next & previous buttons */
 .prev, .next {
+  z-index: 100;
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -152,6 +137,7 @@ body {
   position: absolute;
   bottom: 10px;
   width: 100%;
+  z-index: 100;
 }
 
 .dot {
@@ -169,23 +155,12 @@ body {
   background-color: #717171;
 }
 
-/* Fading animation */
-/*.fade {
-  -webkit-animation: fade 5s 5s infinite;
-  animation: fade 5s 5s infinite;
-
-}*/
-
 @-webkit-keyframes fade {
-  0% {opacity: 0}
-  20% {opacity: 1}
   80% {opacity: 1}
   100% {opacity: 0}
 }
 
 @keyframes fade {
-  0% {opacity: 0}
-  20% {opacity: 1}
   80% {opacity: 1}
   100% {opacity: 0}
 }

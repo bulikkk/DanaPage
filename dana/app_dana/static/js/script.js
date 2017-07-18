@@ -88,8 +88,11 @@ function initProjects(pro, ban) {
       slide.classList.add("mySlides");
       slide.classList.add("fade");
       slide.setAttribute("data-time", String(banner[i-1].fields.time));
-      slide.style.animationName = "fade";
-      slide.style.animationDuration = String(parseInt(banner[i-1].fields.time) + 1) + "s";
+      slide.style.zIndex = banner.length-i;
+      // slide.style.animationName = "fade";
+      // slide.style.animationDuration = String(parseInt(banner[i-1].fields.time)) + "s";
+      // slide.style.WebkitAnimationName = "fade";
+      // slide.style.WebkitAnimationDuration = String(parseInt(banner[i-1].fields.time)) + "s";
       var image = document.createElement("img");
       image.setAttribute("src", "/static/" + banner[i-1].fields.image);
       slide.appendChild(image);
@@ -103,22 +106,31 @@ function showSlides(n) {
     var i;
     var slides = document.getElementsByClassName("mySlides");
     var dots = document.getElementsByClassName("dot");
-    for (i = 1; i <= slides.length; i++) {
-       slides[slides.length-i].style.zIndex = String(i);
-    }
+
     if (slideIndex<0) {slideIndex=slides.length-1}
-    slideIndex++;
-    if (slideIndex> slides.length) {slideIndex = 1}
+    else if (slideIndex>slides.length-1) {slideIndex=0}
+
+    var next = slideIndex+1;
+    if (next>slides.length-1){next=0}
+
+    for (i = 0; i < slides.length; i++) {
+      if (i==slideIndex){
+        slides[i].style.zIndex = "3";
+         
+      }
+      else if (i==next){slides[i].style.zIndex = "2";}
+      else {slides[i].style.zIndex = "1";}
+    }
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
-    // slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
+    dots[slideIndex].classList.add("active");
 
     clearTimeout(myVar);
 
-    myVar = setTimeout(showSlides, parseInt(slides[slideIndex-1].getAttribute("data-time"))*1000);
+    myVar = setTimeout(showSlides, (parseInt(slides[slideIndex].getAttribute("data-time"))+1)*1000);
 
+    slideIndex++;
 }
 
 // function showSlides(n) {
