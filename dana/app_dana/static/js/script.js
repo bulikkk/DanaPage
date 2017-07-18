@@ -87,7 +87,9 @@ function initProjects(pro, ban) {
       var slide = document.createElement("div");
       slide.classList.add("mySlides");
       slide.classList.add("fade");
-      slide.setAttribute("data-time", String(banner[i-1].fields.time))
+      slide.setAttribute("data-time", String(banner[i-1].fields.time));
+      slide.style.animationName = "fade";
+      slide.style.animationDuration = String(banner[i-1].fields.time) + "s";
       var image = document.createElement("img");
       image.setAttribute("src", "/static/" + banner[i-1].fields.image);
       slide.appendChild(image);
