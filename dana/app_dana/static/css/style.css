@@ -155,13 +155,18 @@ body {
   background-color: #717171;
 }
 
+.is-paused {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
 @-webkit-keyframes fade {
-  80% {opacity: 1}
+  90% {opacity: 1}
   100% {opacity: 0}
 }
 
 @keyframes fade {
-  80% {opacity: 1}
+  90% {opacity: 1}
   100% {opacity: 0}
 }
 

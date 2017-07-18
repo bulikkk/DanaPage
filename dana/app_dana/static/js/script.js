@@ -89,17 +89,16 @@ function initProjects(pro, ban) {
       slide.classList.add("fade");
       slide.setAttribute("data-time", String(banner[i-1].fields.time));
       slide.style.zIndex = banner.length-i;
-      // slide.style.animationName = "fade";
-      // slide.style.animationDuration = String(parseInt(banner[i-1].fields.time)) + "s";
-      // slide.style.WebkitAnimationName = "fade";
-      // slide.style.WebkitAnimationDuration = String(parseInt(banner[i-1].fields.time)) + "s";
+      slide.style.animationName = "fade";
+      slide.style.animationDuration = String(parseInt(banner[i-1].fields.time)+1) + "s";
+      slide.style.WebkitAnimationName = "fade";
+      slide.style.WebkitAnimationDuration = String(parseInt(banner[i-1].fields.time)+1) + "s";
       var image = document.createElement("img");
       image.setAttribute("src", "/static/" + banner[i-1].fields.image);
       slide.appendChild(image);
       slides.insertBefore(slide, prev);
     }
 }
-
 
 
 function showSlides(n) {
@@ -114,12 +113,13 @@ function showSlides(n) {
     if (next>slides.length-1){next=0}
 
     for (i = 0; i < slides.length; i++) {
+      slides[i].classList.add("is-paused");
       if (i==slideIndex){
         slides[i].style.zIndex = "3";
-         
+        slides[i].classList.remove("is-paused");
       }
-      else if (i==next){slides[i].style.zIndex = "2";}
-      else {slides[i].style.zIndex = "1";}
+      else if (i==next){slides[i].style.zIndex = "2"; slides[i].classList.add("is-paused");}
+      else {slides[i].style.zIndex = "1"; slides[i].classList.add("is-paused");}
     }
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
