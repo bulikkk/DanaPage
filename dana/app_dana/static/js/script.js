@@ -89,7 +89,7 @@ function initProjects(pro, ban) {
       slide.classList.add("fade");
       slide.setAttribute("data-time", String(banner[i-1].fields.time));
       slide.style.animationName = "fade";
-      slide.style.animationDuration = String(banner[i-1].fields.time) + "s";
+      slide.style.animationDuration = String(parseInt(banner[i-1].fields.time) + 1) + "s";
       var image = document.createElement("img");
       image.setAttribute("src", "/static/" + banner[i-1].fields.image);
       slide.appendChild(image);
@@ -103,8 +103,8 @@ function showSlides(n) {
     var i;
     var slides = document.getElementsByClassName("mySlides");
     var dots = document.getElementsByClassName("dot");
-    for (i = 0; i < slides.length; i++) {
-       slides[i].style.display = "none";
+    for (i = 1; i <= slides.length; i++) {
+       slides[slides.length-i].style.zIndex = String(i);
     }
     if (slideIndex<0) {slideIndex=slides.length-1}
     slideIndex++;
@@ -112,7 +112,7 @@ function showSlides(n) {
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
-    slides[slideIndex-1].style.display = "block";
+    // slides[slideIndex-1].style.display = "block";
     dots[slideIndex-1].className += " active";
 
     clearTimeout(myVar);
